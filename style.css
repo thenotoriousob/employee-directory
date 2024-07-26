@@ -1,0 +1,115 @@
+:root {
+    --main-font-family: "Calistoga", serif;
+    --card-font-family: "Inter", sans-serif;
+    --white-color: #FFFFFF;
+    --main-background-color: #F5F5F5;
+    --card-border-color: #EAEAEA;
+    --card-color: #000000;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
+    font-family: var(--main-font-family);
+}
+
+p {
+    line-height: 1.5;
+}
+
+.container {
+    background-color: var(--main-background-color);
+}
+
+header .container {
+    background-color: transparent;
+}
+
+/* Typography styling - Start */
+h1 {
+    font-size: 4.75rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 0.9375rem;
+}
+
+/* Typography styling - End */
+
+/* Header styling - Start */
+
+header {
+    background-image: url("../images/photos/header-bg.jpg");
+    background-size: cover;
+    min-height: 300px;
+    padding: 1px;
+}
+
+h1 {
+    color: var(--white-color);
+    text-align: center;
+    text-shadow:  0 0 5px black;
+    margin: 1em;
+}
+
+/* Header styling - End */
+
+/* Directory styling - Start */
+
+.employee-container {
+    padding: 3.375em 4.625em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.employee-card {
+    background-color: var(--white-color);
+    color: var(--card-color);
+    font-family: var(--card-font-family);
+    max-width: 320px;
+    min-height: 480px;
+    border: 1px solid var(--card-border-color);
+    padding: 1.125em 1.5em 1.75em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+}
+
+h2 {
+    margin: 0.75em 0 0.25em;
+}
+
+p {
+    margin: 0.625em auto 1em 0;
+}
+
+.fa-brands {
+    color: var(--card-color);
+    padding-right: 1.5em;
+}
+
+.socials-container {
+    margin-top: auto;
+}
+
+/* Directory styling - End */
