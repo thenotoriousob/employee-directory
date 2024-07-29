@@ -75,6 +75,10 @@ h1 {
     /* So the field line up with no spacing between them */
     display:flex;
     justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 600px;
+    min-width: 470px;
 }
 
 select, input {
@@ -87,10 +91,10 @@ select {
     appearance: none;  /* Remove default styling */
     -webkit-appearance: none;  /* Remove default styling in Webkit browsers */
     -moz-appearance: none;
-    min-width: 215px;
+    min-width: 200px;
     padding: 0.75em;
     border-radius: 0.25em 0 0 0.25em;  /* Rounded corners on the left */
-    width: 200px;
+    width: 40%;
     background-image: url('../images/angle-down-solid.svg');
     background-repeat: no-repeat, repeat;
     background-position: right 10px top 50%, 0 0;
@@ -103,8 +107,10 @@ input {
     padding: 0.625em;
     border-radius: 0 0.25em 0.25em 0;  /* Rounded corners on the right */
     border-left: none;
-    min-width: 335px;
-    color: var(--input-color)
+    min-width: 350px;
+    color: var(--input-color);
+    width: 60%;
+    box-sizing: border-box;
 }
 
 .fa-angle-down {
@@ -124,6 +130,8 @@ input {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    width: 100vw;
+    min-width: 470px;
 }
 
 .employee-card {
