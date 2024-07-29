@@ -3,7 +3,7 @@ import { employees } from "./employees-optional.js";
 const roleSearchEl = document.getElementById("roles");
 const nameSearchEl = document.getElementById("search-name");
 
-let filteredEmployees = [...employees];
+let filteredEmployees = [];
 
 roleSearchEl.addEventListener("change", (e) => {
     renderEmployees(e.target.value, nameSearchEl.value);
