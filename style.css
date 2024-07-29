@@ -5,6 +5,9 @@
     --main-background-color: #F5F5F5;
     --card-border-color: #EAEAEA;
     --card-color: #000000;
+    --input-border-color: #CBCBCB;
+    --select-color: #000000;
+    --input-color: #757474;
 }
 
 *,
@@ -18,16 +21,17 @@ html, body {
     font-family: var(--main-font-family);
 }
 
-p {
+select, input, p {
     line-height: 1.5;
 }
 
 .container {
     background-color: var(--main-background-color);
-    min-width: 600px;
+    min-width: 650px;
 }
 
 header .container {
+    /* So the background colour above doesn't interfere with the background image */
     background-color: transparent;
 }
 
@@ -36,7 +40,7 @@ h1 {
     font-size: 4.75rem;
 }
 
-h2 {
+h2, select, input {
     font-size: 1.25rem;
 }
 
@@ -56,6 +60,7 @@ header {
     background-image: url("../images/photos/header-bg.jpg");
     background-size: cover;
     min-height: 300px;
+    /* Stop collapsing margin */
     padding: 1px;
 }
 
@@ -67,41 +72,39 @@ h1 {
 }
 
 .search-container {
+    /* So the field line up with no spacing between them */
     display:flex;
     justify-content: center;
+}
+
+select, input {
+    border: 1px solid var(--input-border-color);
+    outline: none;
+    margin: 0;
 }
 
 select {
     appearance: none;  /* Remove default styling */
     -webkit-appearance: none;  /* Remove default styling in Webkit browsers */
     -moz-appearance: none;
-    margin: 0;
-
-    outline: none;
-    border: 2px solid #ccc;
-    padding: 10px;
-    border-radius: 4px 0 0 4px;  /* Rounded corners on the right */
+    min-width: 215px;
+    padding: 0.75em;
+    border-radius: 0.25em 0 0 0.25em;  /* Rounded corners on the left */
     width: 200px;
-    font-size: 16px;
     background-image: url('../images/angle-down-solid.svg');
     background-repeat: no-repeat, repeat;
     background-position: right 10px top 50%, 0 0;
     background-size: .65em auto, 100%;
+    color: var(--select-color);
+    text-transform: capitalize;
 }
 
 input {
-    margin: 0;
-    outline: none;
-    border: 2px solid #ccc;
-    padding: 10px;
-    border-radius: 0px 4px 4px 0px;  /* Rounded corners on the left */
-    font-size: 16px;
+    padding: 0.625em;
+    border-radius: 0 0.25em 0.25em 0;  /* Rounded corners on the right */
     border-left: none;
-}
-
-input,
-select {
-    box-sizing: border-box;
+    min-width: 335px;
+    color: var(--input-color)
 }
 
 .fa-angle-down {
@@ -117,12 +120,16 @@ select {
 .employee-container {
     padding: 3.375em 4.625em;
     display: flex;
+    /* Preferred the centered look when there wasn't enough cards for the row */
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .employee-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--white-color);
     color: var(--card-color);
     font-family: var(--card-font-family);
@@ -130,9 +137,11 @@ select {
     min-height: 480px;
     border: 1px solid var(--card-border-color);
     padding: 1.125em 1.5em 1.75em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+/* Make the hovered card bigger so its easier to read */
+.employee-card:hover {
+    transform: scale(1.15);
 }
 
 .avatar {
